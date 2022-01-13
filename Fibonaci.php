@@ -10,7 +10,7 @@
 <body>
 <h1>Fibonacci Sequence</h1>
 <form action="Fibonaci.php" method="get">
-    N: <input type="text" name="number">
+    N: <input type="number" name="number">
     <input type="submit" value="submit">
 </form>
 <?php
@@ -27,11 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         echo "Please enter something";
         die;
     }else{
-        $number = (int)test_input($_GET["number"]);
-        if(is_numeric($number) == FALSE){
-            echo "This is not a number";
-            die;
-        }
+        $number = test_input($_GET["number"]);
     }
 }
 
